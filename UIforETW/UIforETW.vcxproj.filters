@@ -66,6 +66,9 @@
     <ClInclude Include="TraceLoggingSupport.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="UIforETW.cpp">
@@ -116,6 +119,9 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="UIforETW.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="zh_CN.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>

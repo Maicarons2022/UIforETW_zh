@@ -408,6 +408,7 @@
     <ClInclude Include="DirectoryMonitor.h" />
     <ClInclude Include="KeyLoggerThread.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="resource1.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -445,6 +446,9 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="UIforETW.rc" />
+    <ResourceCompile Include="zh_CN.rc">
+      <Culture Condition="'$(Configuration)|$(Platform)'=='Release|x64'">0x0804</Culture>
+    </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\UIforETW.rc2" />
