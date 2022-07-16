@@ -17,53 +17,11 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// English (United States) resources
+// 中文(简体，中国) resources
 
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
-LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
-#pragma code_page(1252)
-
-#ifdef APSTUDIO_INVOKED
-/////////////////////////////////////////////////////////////////////////////
-//
-// TEXTINCLUDE
-//
-
-1 TEXTINCLUDE 
-BEGIN
-    "resource.h\0"
-END
-
-2 TEXTINCLUDE 
-BEGIN
-    "#ifndef APSTUDIO_INVOKED\r\n"
-    "#include ""targetver.h""\r\n"
-    "#endif\r\n"
-    "#include ""afxres.h""\r\n"
-    "#include ""verrsrc.h""\r\n"
-    "\0"
-END
-
-3 TEXTINCLUDE 
-BEGIN
-    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
-    "#define _AFX_NO_OLE_RESOURCES\r\n"
-    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
-    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
-    "\r\n"
-    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
-    "LANGUAGE 9, 1\r\n"
-    "#include ""res\\UIforETW.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
-    "#include ""afxres.rc""      // Standard components\r\n"
-    "#if !defined(_AFXDLL)\r\n"
-    "#include ""afxribbon.rc""   // MFC ribbon and control bar resources\r\n"
-    "#endif\r\n"
-    "#endif\r\n"
-    "\0"
-END
-
-#endif    // APSTUDIO_INVOKED
-
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -82,17 +40,15 @@ IDR_MAINFRAME           ICON                    "res\\UIforETW.ico"
 
 IDD_ABOUTBOX DIALOGEX 0, 0, 265, 82
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
-CAPTION "About UI for ETW"
+CAPTION "关于 UI for ETW"
 FONT 8, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
-    ICON            IDR_MAINFRAME,IDC_STATIC,14,14,21,20
+    ICON            IDR_MAINFRAME,IDC_STATIC,14,14,20,20
     CONTROL         "UI for ETW",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | SS_NOPREFIX | WS_GROUP,42,14,114,8
-    CONTROL         "Copyright 2015 Google Inc. All Rights Reserved.",IDC_STATIC,
-                    "Static",SS_LEFTNOWORDWRAP | WS_GROUP,42,26,162,8
+    CONTROL         "版权所有 2015 谷歌公司。保留所有权利。",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,42,26,162,8
     DEFPUSHBUTTON   "OK",IDOK,208,61,50,14,WS_GROUP
-    CONTROL         "Initially/mostly written by Bruce Dawson",IDC_STATIC,
-                    "Static",SS_LEFTNOWORDWRAP | WS_GROUP,42,38,162,8
-    CONTROL         "Build date goes here",IDC_BUILDDATE,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,42,50,217,8
+    CONTROL         "最初/主要由 Bruce Dawson 编写",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,42,38,162,8
+    CONTROL         "构建日期在这里",IDC_BUILDDATE,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,42,50,217,8
 END
 
 IDD_UIFORETW_DIALOG DIALOGEX 0, 0, 569, 221
@@ -101,73 +57,68 @@ EXSTYLE WS_EX_APPWINDOW
 CAPTION "UI for ETW"
 FONT 8, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
-    PUSHBUTTON      "Start &Tracing (Ctrl+Win+R)",IDC_STARTTRACING,7,7,95,14
-    PUSHBUTTON      "Sa&ve Trace Buffers (Ctrl+Win+R)",IDC_SAVETRACEBUFFERS,105,7,115,14
-    PUSHBUTTON      "Cance&l Tracing",IDC_STOPTRACING,223,7,56,14
-    DEFPUSHBUTTON   "UnusedDefaultButton",IDC_UNUSEDDEFAULTBUTTON,287,7,84,14,NOT WS_VISIBLE
-    PUSHBUTTON      "&Settings...",IDC_SETTINGS,399,7,50,14
-    PUSHBUTTON      "About",IDC_ABOUT,455,7,50,14
-    EDITTEXT        IDC_OUTPUT,7,24,453,110,ES_MULTILINE | ES_READONLY | WS_VSCROLL
-    PUSHBUTTON      "Close",IDOK,512,7,50,14
-    CONTROL         "&Compress Trace",IDC_COMPRESSTRACE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,464,24,67,10
-    CONTROL         "Context s&witch call stacks",IDC_CONTEXTSWITCHCALLSTACKS,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,464,36,98,10
-    CONTROL         "CP&U sampling call stacks",IDC_CPUSAMPLINGCALLSTACKS,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,464,48,93,10
-    CONTROL         "&Fast sampling",IDC_FASTSAMPLING,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,464,60,59,10
-    CONTROL         "&GPU tracing",IDC_GPUTRACING,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,464,72,53,10
-    CONTROL         "&Input tracing:",IDC_INPUTTRACING_LABEL,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,464,99,45,8
-    COMBOBOX        IDC_INPUTTRACING,511,97,51,127,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    COMBOBOX        IDC_TRACINGMODE,464,116,98,133,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    CONTROL         "S&how commands",IDC_SHOWCOMMANDS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,464,133,69,10
-    CONTROL         "T&races:",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,7,135,36,8
+    PUSHBUTTON      "开始跟踪(&T) (Ctrl+Win+R)",IDC_STARTTRACING,7,7,95,14,NOT WS_TABSTOP
+    PUSHBUTTON      "保存跟踪缓存(&S) (Ctrl+Win+R)",IDC_SAVETRACEBUFFERS,105,7,115,14
+    PUSHBUTTON      "取消跟踪(&e)",IDC_STOPTRACING,223,7,56,14
+    DEFPUSHBUTTON   "未使用的默认按钮",IDC_UNUSEDDEFAULTBUTTON,287,7,84,14,NOT WS_VISIBLE
+    PUSHBUTTON      "设置...",IDC_SETTINGS,399,7,50,14
+    PUSHBUTTON      "关于",IDC_ABOUT,453,7,50,14
+    EDITTEXT        IDC_OUTPUT,7,24,439,110,ES_MULTILINE | ES_READONLY | WS_VSCROLL
+    PUSHBUTTON      "关闭",IDOK,510,7,50,14
+    CONTROL         "&压缩 跟踪",IDC_COMPRESSTRACE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,462,24,50,10
+    CONTROL         "上下文切换调用堆栈(&W)",IDC_CONTEXTSWITCHCALLSTACKS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,462,36,100,10
+    CONTROL         "CPU 采样调用堆栈(&U)",IDC_CPUSAMPLINGCALLSTACKS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,462,48,89,10
+    CONTROL         "快速采样(&F)",IDC_FASTSAMPLING,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,462,60,57,10
+    CONTROL         "GPU 跟踪(&G)",IDC_GPUTRACING,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,462,72,53,10
+    CONTROL         "输入跟踪(&I)：",IDC_INPUTTRACING_LABEL,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,462,99,49,8
+    COMBOBOX        IDC_INPUTTRACING,509,97,51,127,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_TRACINGMODE,462,116,98,133,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "显示命令??(&H)",IDC_SHOWCOMMANDS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,462,133,58,10
+    CONTROL         "比赛(&R)：",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,7,135,36,8
     LISTBOX         IDC_TRACELIST,7,146,227,68,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
-    CONTROL         "Trace inform&ation:",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,239,135,69,8
+    CONTROL         "跟踪信息：(&a)",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,239,135,69,8
     EDITTEXT        IDC_TRACENOTES,239,146,323,68,ES_MULTILINE | ES_WANTRETURN | WS_VSCROLL
     EDITTEXT        IDC_TRACENAMEEDIT,75,144,160,14,ES_AUTOHSCROLL | ES_WANTRETURN | NOT WS_VISIBLE | NOT WS_TABSTOP
-    CONTROL         "CLR traci&ng",IDC_CLRTRACING,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,464,84,53,10
-    CONTROL         "Trace size:",IDC_TRACESIZE,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,94,135,76,8
+    CONTROL         "CLR 跟踪(&n)",IDC_CLRTRACING,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,462,84,56,10
+    CONTROL         "迹线大小：",IDC_TRACESIZE,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,94,135,76,8
 END
 
 IDD_SETTINGS DIALOGEX 0, 0, 401, 216
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Settings"
+CAPTION "设置"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    CONTROL         "&Heap-profiled processes:",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,7,9,94,8
+    CONTROL         "堆分析进程：(&H)",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,7,9,94,8
     EDITTEXT        IDC_HEAPEXE,102,7,133,14,ES_AUTOHSCROLL
-    CONTROL         "&WS monitored processes:",IDC_WS_MONITOR_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,7,25,94,8
+    CONTROL         "WS 监控进程：(W)",IDC_WS_MONITOR_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,7,25,94,8
     EDITTEXT        IDC_WSMONITOREDPROCESSES,102,22,133,14,ES_AUTOHSCROLL
-    CONTROL         "E&xpensive working set monitoring",IDC_EXPENSIVEWS,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,39,123,10
-    CONTROL         "Extra kernel &flags:",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,7,58,92,8
+    CONTROL         "高级的工作集监控(&X)",IDC_EXPENSIVEWS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,39,89,10
+    CONTROL         "额外的内核标志：(F)",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,7,58,92,8
     EDITTEXT        IDC_EXTRAKERNELFLAGS,102,56,133,14,ES_AUTOHSCROLL
-    CONTROL         "Extra &kernel stackwalks:",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,7,75,92,8
+    CONTROL         "额外的内核堆栈：(K)",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,7,75,92,8
     EDITTEXT        IDC_EXTRASTACKWALKS,102,73,133,14,ES_AUTOHSCROLL
-    CONTROL         "Extra &user mode providers:",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,7,93,92,8
+    CONTROL         "额外的用户模式提供者：(U)",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,7,93,92,8
     EDITTEXT        IDC_EXTRAUSERMODEPROVIDERS,102,91,133,14,ES_AUTOHSCROLL
-    CONTROL         "Perf counters:",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,7,112,52,8
-    PUSHBUTTON      "Se&lect...",IDC_SELECT_PERF_COUNTERS,61,109,38,14
+    CONTROL         "性能计数器：",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,7,112,52,8
+    PUSHBUTTON      "选择...(L)",IDC_SELECT_PERF_COUNTERS,61,109,38,14
     EDITTEXT        IDC_PERFORMANCECOUNTERS,102,109,133,14,ES_AUTOHSCROLL
-    PUSHBUTTON      "&Copy startup profiles",IDC_COPYSTARTUPPROFILE,7,126,75,14
-    CONTROL         "&Background monitoring",IDC_BACKGROUND_MONITORING,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,147,89,10
-    CONTROL         "&Identify Chrome CPU",IDC_IDENTIFY_CHROME_CPU,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,160,83,10
-    CONTROL         "Record pre-trace",IDC_RECORD_PRE_TRACE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,173,71,10
-    CONTROL         "Use other kernel logger",IDC_USE_OTHER_KERNEL_LOGGER,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,186,91,10
-    CONTROL         "Record trace command",IDC_RECORD_TRACE_COMMAND,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,199,89,10
-    CONTROL         "Ch&rome developer",IDC_CHROMEDEVELOPER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,103,134,75,10
-    CONTROL         "&Auto view traces",IDC_AUTOVIEWTRACES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,103,147,70,10
-    CONTROL         "&Stacks on heap tracing",IDC_HEAPSTACKS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,103,160,89,10
+    PUSHBUTTON      "复制启动配置文件(&C)",IDC_COPYSTARTUPPROFILE,7,126,75,14
+    CONTROL         "后台监控(&A)",IDC_BACKGROUND_MONITORING,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,147,58,10
+    CONTROL         "识别 Chrome CPU(&I)",IDC_IDENTIFY_CHROME_CPU,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,160,82,10
+    CONTROL         "记录预跟踪",IDC_RECORD_PRE_TRACE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,173,56,10
+    CONTROL         "使用其他内核记录器",IDC_USE_OTHER_KERNEL_LOGGER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,186,88,10
+    CONTROL         "记录跟踪命令",IDC_RECORD_TRACE_COMMAND,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,199,64,10
+    CONTROL         "Chrome 开发人员(&R)",IDC_CHROMEDEVELOPER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,103,134,85,10
+    CONTROL         "自动查看轨迹(&A)",IDC_AUTOVIEWTRACES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,103,147,74,10
+    CONTROL         "跟踪堆上的堆栈(S)",IDC_HEAPSTACKS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,103,160,81,10
     CONTROL         "&VirtualAlloc stacks always",IDC_VIRTUALALLOCSTACKS,
                     "Button",BS_AUTOCHECKBOX | WS_TABSTOP,103,173,97,10
-    CONTROL         "Check for new versions",IDC_CHECKFORNEWVERSIONS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,103,186,105,10
-    CONTROL         "Trace &JavaScript",IDC_TRACEJAVASCRIPT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,103,199,105,10
-    CONTROL         "Chrome tracing cate&gories:",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,245,7,131,8
+    CONTROL         "检查新版本",IDC_CHECKFORNEWVERSIONS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,103,186,105,10
+    CONTROL         "跟踪 JavaScript(J)",IDC_TRACEJAVASCRIPT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,103,199,105,10
+    CONTROL         "Chrome 跟踪类别：(G)",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,245,7,131,8
     LISTBOX         IDC_CHROME_CATEGORIES,245,18,149,174,LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | LBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
     DEFPUSHBUTTON   "OK",IDOK,286,195,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,344,195,50,14
+    PUSHBUTTON      "取消",IDCANCEL,344,195,50,14
 END
 
 
@@ -191,7 +142,7 @@ VS_VERSION_INFO VERSIONINFO
 BEGIN
     BLOCK "StringFileInfo"
     BEGIN
-        BLOCK "040904B0"
+        BLOCK "080404b0"
         BEGIN
             VALUE "CompanyName", "RandomASCII"
             VALUE "FileDescription", "UI for ETW"
@@ -205,7 +156,7 @@ BEGIN
     END
     BLOCK "VarFileInfo"
     BEGIN
-        VALUE "Translation", 0x409, 1200
+        VALUE "Translation", 0x804, 1200
     END
 END
 
@@ -252,29 +203,29 @@ END
 
 IDR_TRACESCONTEXTMENU MENU
 BEGIN
-    POPUP "Traces"
+    POPUP "痕迹"
     BEGIN
-        MENUITEM "Open trace in &WPA\tCtrl+E",  ID_TRACES_OPENTRACEIN10WPA
-        MENUITEM "Open trace in &GPUView\tCtrl+G", ID_TRACES_OPENTRACEINGPUVIEW
-        MENUITEM "Open trace in Media e&Xperience Analyzer", ID_TRACES_OPENTRACEINEXPERIENCEANALYZER
-        MENUITEM "&Delete trace\tDelete",       ID_TRACES_DELETETRACE
-        MENUITEM "&Rename trace\tF2",           ID_TRACES_RENAMETRACE
-        MENUITEM "&Browse folder",              ID_TRACES_BROWSEFOLDER
-        MENUITEM "Trace path to &clipboard\tCtrl+C", ID_TRACES_TRACEPATHTOCLIPBOARD
-        POPUP "Trace compression"
+        MENUITEM "在 WPA 中打开跟踪(W)\tCtrl+E",      ID_TRACES_OPENTRACEIN10WPA
+        MENUITEM "在 GPUView 中打开跟踪(G)\tCtrl+G",  ID_TRACES_OPENTRACEINGPUVIEW
+        MENUITEM "在媒体体验分析器中打开跟踪(X)",            ID_TRACES_OPENTRACEINEXPERIENCEANALYZER
+        MENUITEM "删除跟踪(&D)\tDelete",            ID_TRACES_DELETETRACE
+        MENUITEM "重命名轨迹????(R)\tF2",            ID_TRACES_RENAMETRACE
+        MENUITEM "浏览文件夹(&B)",                   ID_TRACES_BROWSEFOLDER
+        MENUITEM "跟踪剪贴板的路径(&C)\tCtrl+C",        ID_TRACES_TRACEPATHTOCLIPBOARD
+        POPUP "跟踪压缩"
         BEGIN
-            MENUITEM "&ETW compress trace (Win 8.0+)", ID_TRACES_COMPRESSTRACE
-            MENUITEM "&Zip compress trace",         ID_TRACES_ZIPCOMPRESSTRACE
-            MENUITEM "ETW Compress all &traces (Win 8.0+)", ID_TRACES_COMPRESSTRACES
-            MENUITEM "Zip compress all traces",     ID_TRACES_ZIPCOMPRESSALLTRACES
+            MENUITEM "ETW 压缩跟踪 (Win 8.0+)(&E)",     ID_TRACES_COMPRESSTRACE
+            MENUITEM "Zip 压缩跟踪(Z)",                 ID_TRACES_ZIPCOMPRESSTRACE
+            MENUITEM "ETW 压缩所有痕迹 (Win 8.0+)(T)",    ID_TRACES_COMPRESSTRACES
+            MENUITEM "Zip压缩所有痕迹",                   ID_TRACES_ZIPCOMPRESSALLTRACES
         END
-        POPUP "&Scripts"
+        POPUP "脚本(&S)"
         BEGIN
-            MENUITEM "&Identify Chrome processes",  ID_TRACES_IDENTIFYCHROMEPROCESSES
-            MENUITEM "Identify Chrome processes, with &CPU", ID_TRACES_IDENTIFYCHROMEPROCESSESWITHCPU
+            MENUITEM "识别 Chrome 进程(&I)",            ID_TRACES_IDENTIFYCHROMEPROCESSES
+            MENUITEM "使用 CPU 识别 Chrome 进程(&C)",     ID_TRACES_IDENTIFYCHROMEPROCESSESWITHCPU
             MENUITEM SEPARATOR
-            MENUITEM "&Strip Chrome symbols",       ID_TRACES_STRIPCHROMESYMBOLS
-            MENUITEM "Create &flame graph",         ID_SCRIPTS_CREATEFLAMEGRAPH
+            MENUITEM "剥离 Chrome 符号(&S)",            ID_TRACES_STRIPCHROMESYMBOLS
+            MENUITEM "创建火焰图(F)",                    ID_SCRIPTS_CREATEFLAMEGRAPH
         END
     END
 END
@@ -340,10 +291,62 @@ END
 
 STRINGTABLE
 BEGIN
-    IDS_ABOUTBOX            "&About UI for ETW..."
+    IDS_ABOUTBOX            "(&A)关于 UI for ETW..."
 END
 
-#endif    // English (United States) resources
+#endif    // 中文(简体，中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// 英语(美国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "#include ""verrsrc.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#include ""res\\UIforETW.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""      // Standard components\r\n"
+    "#if !defined(_AFXDLL)\r\n"
+    "#include ""afxribbon.rc""   // MFC ribbon and control bar resources\r\n"
+    "#endif\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // 英语(美国) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
