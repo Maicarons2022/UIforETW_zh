@@ -5,6 +5,7 @@
 *.etl
 *.obj
 *.exe
+*.msi
 *.exp
 *.ilk
 *.opensdf
